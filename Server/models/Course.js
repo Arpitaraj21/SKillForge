@@ -15,7 +15,8 @@ const courseSchema = new mongoose.Schema({
     },
     instructorId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     },
     duration: {
         type: Number
@@ -23,14 +24,6 @@ const courseSchema = new mongoose.Schema({
     thumbnailUrl: {
         type: String
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
 }, {timestamp: true})
 
 const Course = mongoose.model("Course", courseSchema)
