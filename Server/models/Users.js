@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const User = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -37,9 +37,6 @@ const User = new mongoose.Schema({
         linkedin: { type: String },
         github: { type: String }
     },
-    thumbnailUrl: {
-        type: String
-    },
     createdAt: {
         type: Date,
         default: Date.now
@@ -48,7 +45,7 @@ const User = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-})
+}, {timestamps: true})
 
 
 const User = mongoose.model("User", userSchema)
