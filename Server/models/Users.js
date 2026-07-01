@@ -23,9 +23,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         maxlength: 30
     },
-    role: {
-        alias: "student" | "instructor"
-    },
     phoneNumber: {
         type: Number,
         unique: true
